@@ -5,6 +5,7 @@ import Homepage from "../homepage/homepage";
 import dataSource from '../api/data';
 import Hostel from '../hostel/hostel';
 import NavBar from '../navbar/nav';
+import './app.css';
 
 export default function App() {
   const [hostels, setHostels] = useState([])
@@ -28,7 +29,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <div className="Navigation">
+      <div class="Navigation">
         <NavBar/>
 
           <Routes>

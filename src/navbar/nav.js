@@ -1,20 +1,22 @@
-import React from 'react'
-import { Container, Nav, Navbar } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import {Nav} from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const NavHeader = () => {
   return (
-    <>
-      <Navbar>
-        <Container>
-            <Link to="/" className="text-decoration-none text-white navbar-brand">Home</Link>
-          <Nav>
-              <Link to="hostels" className="text-decoration-none text-white nav-link">Hostels</Link>
-          </Nav>
-        </Container>
-      </Navbar>
-    </>
-  )
-}
+    <div class="nav">
+      <Nav>
+        <Nav.Item>
+          <Nav.Link href="/">Home</Nav.Link>
+        </Nav.Item>
 
-export default NavHeader
+        <Nav.Item>
+          <Nav.Link href="hostels">View Hostels</Nav.Link>
+        </Nav.Item>
+
+        </Nav>
+      </div>
+  );
+};
+
+export default NavHeader;
