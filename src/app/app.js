@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
-import Hostels from "./Hostels";
-import Homepage from "./Homepage";
-import dataSource from './data';
-import Hostel from './Hostel';
+import Hostels from "../hostel/hostels";
+import Homepage from "../homepage/homepage";
+import dataSource from '../api/data';
+import Hostel from '../hostel/hostel';
 
 export default function App() {
   const [hostels, setHostels] = useState([])

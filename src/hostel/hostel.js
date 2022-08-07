@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { Col, Container, Row } from "react-bootstrap"
-import dataSource from './data'
+import dataSource from '../api/data'
 import { Loader } from '@googlemaps/js-api-loader'
 // import RatingsChart from "../Chart/Chart"
 // import Reviews from "../Reviews/Reviews"

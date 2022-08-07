@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {Col, Container, ListGroup, Row, InputGroup, FormControl} from 'react-bootstrap'
-import HostelListItem from './HostelListItem'
+import HostelListItem from './hostelListItem'
 // import FeatherIcon from 'feather-icons-react'
 
 const Hostels = ({ hostels }) => {
