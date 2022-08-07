@@ -1,13 +1,12 @@
-import React, {useState} from 'react'
-import {Col, Container, ListGroup, Row, InputGroup, FormControl} from 'react-bootstrap'
-import HostelListItem from './hostelListItem'
-// import FeatherIcon from 'feather-icons-react'
+import React, {useState} from 'react';
+import {Col, Container, ListGroup, Row, InputGroup, FormControl} from 'react-bootstrap';
+import HostelListItem from './hostelListItem';
 
-const Hostels = ({ hostels }) => {
+const Hostels = ({hostels}) => {
     const [searchString, setSearchString] = useState('')
     return (
       <div className='d-flex flex-column min-vh-100'>
-        <Container  className="py-5">
+        <Container className="py-5">
         <Row>
           <Col className='d-flex align-items-center justify-content-around'>
             <h1 className="pt-5">Hostels</h1>
@@ -16,7 +15,7 @@ const Hostels = ({ hostels }) => {
         <Row>
           <Col className='d-flex align-items-center justify-content-around'>
             <InputGroup className="mb-3">
-              <InputGroup.Text id="basic-addon1">Home</InputGroup.Text>
+              <InputGroup.Text id="basic-addon1">Search</InputGroup.Text>
               <FormControl
                 placeholder="Enter a hostel's address"
                 aria-label="Enter a hostel's address"
