@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
-import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
+import React, {useState, useEffect} from "react";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Hostels from "../hostel/hostels";
 import Homepage from "../homepage/homepage";
 import dataSource from '../api/data';
 import Hostel from '../hostel/hostel';
+import NavBar from '../navbar/nav';
 
 export default function App() {
   const [hostels, setHostels] = useState([])
@@ -27,20 +28,16 @@ export default function App() {
 
   return (
     <BrowserRouter>
-    <div>
-      <Link to="/">Homepage</Link>
-      <Link to="/hostels">Hostels</Link>
-    
-    
+      <div className="Navigation">
+        <NavBar/>
 
-    <Routes>
-      <Route path="/" element={<Homepage />} />
-
-      <Route path="hostels/*" element={<Hostels hostels={hostels} />}/>
-      <Route path="hostels/:id" element={<Hostel hostels={hostels} />}/>
-      <Route path=':id' element={<p>Page not found: Please try again</p>}/>
-    </Routes>
-    </div>
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path="hostels/*" element={<Hostels hostels={hostels} />}/>
+            <Route path="hostels/:id" element={<Hostel hostels={hostels} />}/>
+            <Route path=':id' element={<p>Page not found: Please try again</p>}/>
+          </Routes>
+      </div>
     </BrowserRouter>
 
   );
