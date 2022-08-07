@@ -1,5 +1,5 @@
-import React, { Component, useState } from 'react'
-import { Col, Container, ListGroup, Row, InputGroup, FormControl } from 'react-bootstrap'
+import React, {useState} from 'react'
+import {Col, Container, ListGroup, Row, InputGroup, FormControl} from 'react-bootstrap'
 import HostelListItem from './HostelListItem'
 // import FeatherIcon from 'feather-icons-react'
 
@@ -27,7 +27,7 @@ const Hostels = ({ hostels }) => {
             </InputGroup>
           </Col>
         </Row>
-        {/* <ListGroup>
+        <ListGroup>
           {hostels.filter(hostel => {
             if (searchString === '') {
               return hostel
@@ -37,21 +37,10 @@ const Hostels = ({ hostels }) => {
               return null
             }
           }).map(hostel => <HostelListItem className='hostelListItem' key={hostel.id} hostel={hostel}/>)}
-        </ListGroup> */}
+        </ListGroup>
         </Container>
       </div>
     )
   }
-
-// class Hostels extends Component {
-//     render() {
-//       return (
-//           <div>
-//            <p>Hostels Page</p>
-//            <p>Add in search and list of hostels here</p>
-//           </div>
-//       )
-//   }
-//   }
 
 export default Hostels;

@@ -2,7 +2,7 @@ import React from "react"
 import { ListGroupItem } from "react-bootstrap"
 import { Link, Routes, Route } from "react-router-dom"
 
-const HostelListItem = ({ hostel }) => {
+const HostelListItem = ({hostel}) => {
   const sum = hostel.ratings.reduce((a, b) => a + b, 0)
   const avg = (sum / hostel.ratings.length) || 0
   return (

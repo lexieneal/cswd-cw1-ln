@@ -3,6 +3,7 @@ import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
 import Hostels from "./Hostels";
 import Homepage from "./Homepage";
 import dataSource from './data';
+import Hostel from './Hostel';
 
 export default function App() {
   const [hostels, setHostels] = useState([])
@@ -34,7 +35,9 @@ export default function App() {
 
     <Routes>
       <Route path="/" element={<Homepage />} />
-      <Route path="/hostels" element={<Hostels />} />
+
+      <Route path="hostels/*" element={<Hostels hostels={hostels} />}/>
+      <Route path="hostels/:id" element={<Hostel hostels={hostels} />}/>
       <Route path=':id' element={<p>Page not found: Please try again</p>}/>
     </Routes>
     </div>

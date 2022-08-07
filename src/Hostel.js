@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { Col, Container, Row } from "react-bootstrap"
-import dataSource from '../../data'
+import dataSource from './data'
 import { Loader } from '@googlemaps/js-api-loader'
 // import RatingsChart from "../Chart/Chart"
 // import Reviews from "../Reviews/Reviews"
@@ -80,16 +80,15 @@ const Hostel = () => {
           <Col id="map" className="col-sm-12 col-md-6" style={{width:'50%',height:'400px'}}>
         </Col>
       </Row>
-      <RatingsChart hostel={{hostel, setHostel}}/>
+
       <p className="fs-3">Total ratings: {hostel?.ratings.length}</p>
       <hr/>
       <Row className="py-5">
         <Col className="col-sm-12 col-md-12">
-          <Reviews hostel={{hostel, setHostel}}/>
+
         </Col>
       </Row>
     </Container>
-    {/* <Footer/> */}
     </div>
   )
 }
