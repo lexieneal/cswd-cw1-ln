@@ -1,7 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import './hostels.css';
 import HostelsHeader from './hostelsHeader'
-
 import React, {useState} from 'react';
 import {Col, Container, ListGroup, Row, InputGroup, FormControl} from 'react-bootstrap';
 import HostelListItem from './hostelListItem';
@@ -9,28 +8,41 @@ import HostelListItem from './hostelListItem';
 const Hostels = ({hostels}) => {
     const [searchString, setSearchString] = useState('')
     return (
-      <div className='d-flex flex-column min-vh-100'>
+      <div>
         <HostelsHeader></HostelsHeader>
-        <Container className="py-5">
-        <Row>
-          <Col className='d-flex align-items-center justify-content-around'>
-            <h1 className="pt-5">Hostels</h1>
+        <Container>
+        <Row> 
+          <Col>
+            <h1 className="custom">Hostels</h1>
           </Col>
         </Row>
+
         <Row>
-          <Col className='d-flex align-items-center justify-content-around'>
+          <Col>
+          <p>Sed at diam rutrum, pharetra massa nec, tristique tortor. Curabitur sit amet semper mi. 
+        Donec et dolor leo. Maecenas et finibus turpis. Nam id sapien auctor, suscipit magna eget, 
+        commodo odio. Fusce venenatis augue at nulla gravida, eu tempus turpis fringilla. Cras posuere 
+        ligula neque, at bibendum leo fermentum in. Sed eu nisl ac dui maximus blandit et placerat neque. 
+        Integer lobortis nisi sit amet scelerisque laoreet. Donec convallis odio eros, vitae cursus 
+        mauris dapibus sed. Etiam ac sapien ut mi blandit cursus.</p>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col>
             <InputGroup className="mb-3">
               <InputGroup.Text id="basic-addon1">Search</InputGroup.Text>
               <FormControl
-                placeholder="Enter a hostel's address"
-                aria-label="Enter a hostel's address"
-                aria-describedby="basic-addon1"
+                // placeholder="Enter a hostel's address"
+                // aria-label="Enter a hostel's address"
+                // aria-describedby="basic-addon1"
                 type='text'
                 onChange={e => setSearchString(e.target.value)}
               />
             </InputGroup>
           </Col>
         </Row>
+
         <ListGroup>
           {hostels.filter(hostel => {
             if (searchString === '') {
@@ -42,6 +54,7 @@ const Hostels = ({hostels}) => {
             }
           }).map(hostel => <HostelListItem className='hostelListItem' key={hostel.id} hostel={hostel}/>)}
         </ListGroup>
+
         </Container>
       </div>
     )

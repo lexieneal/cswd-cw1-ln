@@ -28,7 +28,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <div class="Navigation">
+      <div className="Navigation">
         <NavBar/>
 
           <Routes>
