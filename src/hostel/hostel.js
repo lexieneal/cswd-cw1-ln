@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap";
 import dataSource from '../api/data';
 import HostelsHeader from "./hostelsHeader";
-
+import { Loader } from "@googlemaps/js-api-loader";
 
 const Hostel = () => {
   const { id } = useParams()
@@ -28,6 +28,31 @@ const Hostel = () => {
 
   const sum = hostel?.ratings.reduce((a, b) => a + b, 0)
   const avg = (sum / hostel?.ratings.length) || 0
+
+  // Google Maps Integration
+
+  const loader = new Loader({
+    apiKey: "AIzaSyB74kBdsBRDHl8sGiOgIK8F2j9rN2cXyH4",
+    version: "weekly"
+  });
+
+  const location = hostel?.location //gets the location from the api
+  const lat = location?.lat //separates the latitude
+  const lng = location?.lng //separates the longitude
+
+  const mapOptions = {
+    center: {
+      lat: Number(lat), //uses the latitude from the api 
+      lng: Number(lng)  //uses the longitude from the api 
+    },
+    zoom: 17
+  }
+  
+  loader.load().then(google => {
+    new google.maps.Map(document.getElementById('map'), mapOptions);
+  })
+  .catch(e => console.log(e))
+
   
   return (
 
@@ -48,7 +73,7 @@ const Hostel = () => {
               <p>{hostel?.description}</p>
             </Col>
             <Col>
-              <p>{hostel?.id}</p>
+              {/* <div id="map"></div> */}
             </Col>
           </Row>
 
