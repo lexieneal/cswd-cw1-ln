@@ -1,0 +1,8 @@
+.hostelsHeader {
+    background-image: url("../images/hostel.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 300px;
+}

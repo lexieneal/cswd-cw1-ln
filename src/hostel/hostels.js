@@ -1,3 +1,7 @@
+import 'bootstrap/dist/css/bootstrap.css';
+import './hostels.css';
+import HostelsHeader from './hostelsHeader'
+
 import React, {useState} from 'react';
 import {Col, Container, ListGroup, Row, InputGroup, FormControl} from 'react-bootstrap';
 import HostelListItem from './hostelListItem';
@@ -6,6 +10,7 @@ const Hostels = ({hostels}) => {
     const [searchString, setSearchString] = useState('')
     return (
       <div className='d-flex flex-column min-vh-100'>
+        <HostelsHeader></HostelsHeader>
         <Container className="py-5">
         <Row>
           <Col className='d-flex align-items-center justify-content-around'>

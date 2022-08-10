@@ -1,21 +1,33 @@
 import React from 'react';
-import {Nav} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './nav.css'
+
 
 const NavHeader = () => {
-  return (
-    <div class="nav">
-      <Nav>
-        <Nav.Item>
-          <Nav.Link href="/">Home</Nav.Link>
-        </Nav.Item>
+return ( 
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0">
 
-        <Nav.Item>
-          <Nav.Link href="hostels">View Hostels</Nav.Link>
-        </Nav.Item>
+      <a class="navbar-brand" href="/">Backpacking Scotland</a>
 
-        </Nav>
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="#navbarSupportedContent" 
+      aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="hostels">View Hostels</a>
+          </li>
+
+        </ul>
       </div>
+</nav>
   );
 };
 
