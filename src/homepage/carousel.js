@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 function Slideshow() {
     return (    
-      <div style={{display: 'block', width: 700}}>
+      <div style={{display: 'block', width: 700, padding: 20}}>
         <Carousel>
           <Carousel.Item interval={3000}>
             <img className="d-block w-100" src="https://www.hostelworld.com/blog/wp-content/uploads/2018/07/The-ultimate-backpacker-guide-to-Scotland.jpg" 
