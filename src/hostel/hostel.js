@@ -26,8 +26,12 @@ const Hostel = () => {
     fetchedHostel()
   }, [id])
 
-
+  const sum = hostel?.ratings.reduce((a, b) => a + b, 0)
+  const avg = (sum / hostel?.ratings.length) || 0
+  
   return (
+
+
     <div>
       <HostelsHeader></HostelsHeader>
 
@@ -40,30 +44,37 @@ const Hostel = () => {
 
           <Row>
             <Col>
+              <h1 className="custom2">Description</h1>
               <p>{hostel?.description}</p>
             </Col>
             <Col>
-              <p>Has Cafe?</p>
+              <p>{hostel?.id}</p>
             </Col>
           </Row>
 
           <Row>
             <Col>
-              <h3>Contact</h3>
-              <a href={`mailto: ${hostel?.email}`}>{hostel?.email}</a>
-              <p>{hostel?.phone}</p>
+              <h1 className="custom2">Contact Details</h1>
+              Email: <a href={`mailto: ${hostel?.email}`}>{hostel?.email}</a><br></br>
+              Phone No: {hostel?.phone}
             </Col>
 
             <Col>
-              <h3>Location</h3>
-              <p>{hostel?.address}</p>
-              <p>{hostel?.postcode}</p>
+            <h1 className="custom2">Location</h1>
+              Address: {hostel?.address}<br></br>
+              Postcode: {hostel?.postcode}
             </Col>
           </Row>
 
           <Row>
             <Col>
-            <p>Total ratings: {hostel?.ratings.length}</p>
+            <h1 className="custom2">Ratings</h1>
+            <span>Avg. Rating: {'⭐️ '.repeat(avg)}</span><br></br>
+            Total Ratings: {hostel?.ratings.length}
+            </Col>
+            <Col>
+            <h1 className="custom2">Amenities</h1>
+            Cafe: { hostel?.cafe ? 'Yes' : 'No' }
             </Col>
           </Row>
         </Container>
