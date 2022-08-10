@@ -32,13 +32,17 @@ const Hostel = () => {
   // Google Maps Integration
 
   const loader = new Loader({
-    apiKey: "AIzaSyB74kBdsBRDHl8sGiOgIK8F2j9rN2cXyH4",
+    apiKey: "AIzaSyD7hs3VktlDqZzLhytKxcnokE6p2Vq5FkI",
     version: "weekly"
   });
 
   const location = hostel?.location //gets the location from the api
   const lat = location?.lat //separates the latitude
-  const lng = location?.lng //separates the longitude
+  const lng = location?.long //separates the longitude
+  
+  console.log(location)
+  console.log(lat)
+  console.log(lng)
 
   const mapOptions = {
     center: {
@@ -72,8 +76,9 @@ const Hostel = () => {
               <h1 className="custom2">Description</h1>
               <p>{hostel?.description}</p>
             </Col>
-            <Col>
-              {/* <div id="map"></div> */}
+            <Col>              
+              <h1 className="custom2">Map</h1>
+              <div id="map" style={{width: '100%', height:'400px'}}></div>
             </Col>
           </Row>
 
