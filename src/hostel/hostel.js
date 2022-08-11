@@ -124,8 +124,8 @@ const Hostel = () => {
               </tr>
               </tbody>
             </table>
-
             </Col>
+            
             <Col>
               <h1 className="custom2">Ratings</h1>
               <p>So far <b>{hostel?.ratings.length}</b> ratings have been left for this hostel.</p>
