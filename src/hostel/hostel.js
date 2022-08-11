@@ -4,8 +4,8 @@ import { Col, Container, Row } from "react-bootstrap";
 import dataSource from '../api/data';
 import HostelsHeader from "./hostelsHeader";
 import { Loader } from "@googlemaps/js-api-loader";
-import AddNewRating from '../ratings/ratings';
-import Reviews from '../reviews/reviews';
+// import AddNewRating from '../ratings/ratings'; //Commented out as code to add Rating doesn't work
+// import Reviews from '../reviews/reviews'; //Commented out as code to add Review doesn't work
 
 const Hostel = () => {
   const { id } = useParams()
@@ -58,6 +58,8 @@ const Hostel = () => {
     new google.maps.Map(document.getElementById('map'), mapOptions);
   })
   .catch(e => console.log(e))
+
+
   
   return (
     <div>
@@ -139,12 +141,13 @@ const Hostel = () => {
           <Row>
           <Col>
           <h1 className="custom2">Reviews</h1>
-          <p>Put reviews here</p>
+          {hostel?.reviews.map((review, key) => {
+            return <p key={key}><b>{review.reviewer}</b> - {review.review}</p>
+          })}
           </Col>
           </Row>
 
-<hr></hr>
-
+          <hr></hr>
 
         </Container>
 
