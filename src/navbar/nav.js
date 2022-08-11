@@ -5,7 +5,7 @@ import './nav.css'
 
 const NavHeader = () => {
 return ( 
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0">
+    <nav class="navbar navbar-expand-sm navbar-light fixed-top mask-custom shadow-0">
 
       <a class="navbar-brand" href="/">Backpacking Scotland</a>
 

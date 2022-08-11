@@ -19,12 +19,13 @@ const Hostels = ({hostels}) => {
 
         <Row>
           <Col>
-          <p>Sed at diam rutrum, pharetra massa nec, tristique tortor. Curabitur sit amet semper mi. 
-        Donec et dolor leo. Maecenas et finibus turpis. Nam id sapien auctor, suscipit magna eget, 
-        commodo odio. Fusce venenatis augue at nulla gravida, eu tempus turpis fringilla. Cras posuere 
-        ligula neque, at bibendum leo fermentum in. Sed eu nisl ac dui maximus blandit et placerat neque. 
-        Integer lobortis nisi sit amet scelerisque laoreet. Donec convallis odio eros, vitae cursus 
-        mauris dapibus sed. Etiam ac sapien ut mi blandit cursus.</p>
+          <p>Choosing to stay in hostels is one of the best ways to meet new people, keep costs low and lesson your impact 
+            on the planet. It can enrich your travel experience without costing any extra money and provides heaps of other benefits 
+            such as having somewhere to do laundry, somewhere to make meals and social events to meet people as you travel.
+          </p>
+          <p>Please find below a list of hostels to choose from, each with their current rating. Selecting a hostel 
+            will display more information including amentities, locations, contact information and reviews from other travellers.
+          </p>
           </Col>
         </Row>
 
@@ -33,9 +34,7 @@ const Hostels = ({hostels}) => {
             <InputGroup className="mb-3">
               <InputGroup.Text id="basic-addon1">Search</InputGroup.Text>
               <FormControl
-                // placeholder="Enter a hostel's address"
-                // aria-label="Enter a hostel's address"
-                // aria-describedby="basic-addon1"
+                placeholder="Find a specific hostel here..."
                 type='text'
                 onChange={e => setSearchString(e.target.value)}
               />

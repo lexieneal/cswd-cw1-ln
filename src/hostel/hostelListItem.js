@@ -13,11 +13,11 @@ const HostelListItem = ({hostel}) => {
      <ListGroupItem>
       <div className='d-flex justify-content-between'>
         {hostel.name}
-        <Link to={`/hostels/${hostel.id}`}>Click here for more info</Link>
+        <Link to={`/hostels/${hostel.id}`}>more info</Link>
       </div>
 
       <div className="nestedGroupItem">
-        <span>Avg. Rating: {'⭐️ '.repeat(avg)}</span>
+        Avg. Rating:<span className='staricon'>{'★ '.repeat(avg)}</span>
       </div>
      </ListGroupItem>
     </>
