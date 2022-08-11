@@ -3,7 +3,7 @@ import { ListGroupItem } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import './hostels.css';
 
-const HostelListItem = ({hostel}) => {
+const ListItem = ({hostel}) => {
 
   const sum = hostel?.ratings.reduce((a, b) => a + b, 0)
   const avg = (sum / hostel?.ratings.length) || 0
@@ -23,4 +23,4 @@ const HostelListItem = ({hostel}) => {
     </>
   )
 }
-export default HostelListItem
+export default ListItem

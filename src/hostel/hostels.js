@@ -3,7 +3,7 @@ import './hostels.css';
 import HostelsHeader from './hostelsHeader'
 import React, {useState} from 'react';
 import {Col, Container, ListGroup, Row, InputGroup, FormControl} from 'react-bootstrap';
-import HostelListItem from './hostelListItem';
+import ListItem from './hostelListItem';
 
 const Hostels = ({hostels}) => {
     const [searchString, setSearchString] = useState('')
@@ -51,7 +51,7 @@ const Hostels = ({hostels}) => {
             } else {
               return null
             }
-          }).map(hostel => <HostelListItem className='hostelListItem' key={hostel.id} hostel={hostel}/>)}
+          }).map(hostel => <ListItem className='ListItem' key={hostel.id} hostel={hostel}/>)}
         </ListGroup>
 
         </Container>

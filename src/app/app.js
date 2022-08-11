@@ -30,7 +30,6 @@ export default function App() {
     <BrowserRouter>
       <div className="Navigation">
         <NavBar/>
-
           <Routes>
             <Route path="/" element={<Homepage />} />
             <Route path="hostels/*" element={<Hostels hostels={hostels} />}/>
